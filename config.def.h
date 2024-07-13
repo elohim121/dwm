@@ -1,6 +1,7 @@
-/* See LICENSE file for copyright and license details. */
+/* sEE licENSE file for copyright and license details. */
 /* Constant */
 #define BROWSER "firefox"
+#define TERMINAL "st"
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -63,7 +64,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lock[] = { "slock", NULL };
 static const char *blue[] = { "blueman-manager", NULL };
-static const char *wifi[] = { "nm-connection-editor", NULL };
+static const char *wifi[] = { TERMINAL,"-e", "sudo", "nmtui", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
