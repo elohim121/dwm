@@ -1,4 +1,6 @@
 # VerusVir build of dwm
+[dwm](https://dwm.suckless.org/) is a simple window manager
+
 Just some binding for my personal use and a patch to use dwm with AZERTY keyboards
 
 ## Installation 
