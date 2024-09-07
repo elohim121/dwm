@@ -23,6 +23,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *defaulttagapps[] = { "st", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -69,11 +70,12 @@ static const char *wifi[] = { TERMINAL,"-e", "sudo", "nmtui", NULL };
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_f,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY, 	                XK_BackSpace, spawn,       {.v = lock } },
-	{ MODKEY,	                XK_w,      spawn,          {.v = (const char* []) { BROWSER, NULL } } },
-	{ MODKEY,	                XK_F3,      spawn,          {.v = wifi } },
-	{ MODKEY,	                XK_F2,     spawn,          {.v = blue } },
+	{ MODKEY,												XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,												XK_s,      spawndefault,   {0} },
+	{ MODKEY,												XK_BackSpace, spawn,       {.v = lock } },
+	{ MODKEY,												XK_w,      spawn,          {.v = (const char* []) { BROWSER, NULL } } },
+	{ MODKEY,												XK_F3,		 spawn,          {.v = wifi } },
+	{ MODKEY,												XK_F2,     spawn,          {.v = blue } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
