@@ -8,7 +8,7 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
+static const char *fonts[]          			= { "monospace:size=12", "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true"  };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -23,7 +23,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *defaulttagapps[] = { "st", NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL };
+static const char *defaulttagapps[] = { "", "", "st", NULL, NULL, NULL, NULL, NULL, NULL };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -65,8 +65,9 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *lock[] = { "slock", NULL };
 static const char *blue[] = { "blueman-manager", NULL };
-static const char *wifi[] = { TERMINAL,"-e", "sudo", "nmtui", NULL };
+static const char *wifi[] = { TERMINAL,"-e", "sudo", "nmtui", NULL };	
 
+#include "exitdwm.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_f,      spawn,          {.v = dmenucmd } },
@@ -106,7 +107,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_egrave,                 6)
 	TAGKEYS(                        XK_underscore,             7)
 	TAGKEYS(                        XK_ccedilla,               8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,							XK_e,			 exitdwm,				 {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };
 
