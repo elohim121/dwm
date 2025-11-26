@@ -107,6 +107,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_egrave,                 6)
 	TAGKEYS(                        XK_underscore,             7)
 	TAGKEYS(                        XK_ccedilla,               8)
+	{ ShiftMask,      XK_Print, spawn,    SHCMD("maim -s | tee ~/Pictures/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png") },
 	{ MODKEY|ShiftMask,							XK_e,			 exitdwm,				 {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
 };
